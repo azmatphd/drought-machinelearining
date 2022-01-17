@@ -11,7 +11,7 @@ plot(weather$PET1)
 weather$PET2<-penman(Tmin =weather$Tmin,Tmax = weather$Tmax,lat = 25.44,U2=weather$wind,Ra=weather$solar,RH=weather$humidity)
 plot(weather$PET2)
 #water deficit/surplus
-waterbalance<-weather$Precipitation-weather$PET2
+waterbalance<-weather$Precipitation-weather$PET1
 #SPEI calculation
 SPEI<-spei(waterbalance,1) # here 1 reprsent time scale
 plot.spei(SPEI)
